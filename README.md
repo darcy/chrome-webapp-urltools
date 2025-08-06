@@ -1,6 +1,12 @@
-# webapp-urltools
+# chrome-webapp-urltools
 
 A Chrome extension providing URL editing and copying tools optimized for web applications running in `--app` mode, particularly useful for Omarchy users.
+
+## Screenshots
+
+### Edit URL Modal
+![Edit URL Modal](screenshots/edit-url-modal1.png)
+*The inline URL editor appears when you press `Ctrl+Shift+E`*
 
 ## Features
 
@@ -25,7 +31,7 @@ A Chrome extension providing URL editing and copying tools optimized for web app
 
 1. **Download or clone this repository** to your local machine
    ```bash
-   git clone https://github.com/yourusername/webapp-urltools.git
+   git clone https://github.com/yourusername/chrome-webapp-urltools.git
    # OR download and extract the ZIP file
    ```
 
@@ -38,24 +44,24 @@ A Chrome extension providing URL editing and copying tools optimized for web app
 
 4. **Load the Extension**
    - Click the "Load unpacked" button
-   - Navigate to and select the `webapp-urltools` folder (the folder containing `manifest.json`)
+   - Navigate to the `chrome-webapp-urltools` folder
+   - Select the `chrome` subfolder (the folder containing `manifest.json`)
    - Click "Select Folder"
 
 5. **Verify Installation**
-   - You should see "webapp-urltools" appear in your extensions list
+   - You should see "chrome-webapp-urltools" appear in your extensions list
    - The extension is now active and ready to use!
-   - Pin the extension to your toolbar for easy access (optional)
 
 ### Updating the Extension
 
 When you pull updates or make changes:
 1. Go to `chrome://extensions/`
-2. Find webapp-urltools
+2. Find chrome-webapp-urltools
 3. Click the refresh icon (↻) on the extension card
 
 ### Troubleshooting Installation
 
-- **"Manifest file is missing or unreadable"**: Make sure you selected the correct folder containing `manifest.json`
+- **"Manifest file is missing or unreadable"**: Make sure you selected the `chrome` subfolder containing `manifest.json`
 - **Extension not working in app mode**: Reload the app window after installing
 - **Keyboard shortcuts not working**: Check for conflicts at `chrome://extensions/shortcuts`
 
@@ -77,7 +83,7 @@ You can customize keyboard shortcuts at `chrome://extensions/shortcuts`
 This extension was created specifically to address the limitations of Chrome's `--app` mode, which is heavily used in Omarchy and other PWA-focused workflows. Standard Chrome extensions often fail to inject content scripts into app mode windows, making it difficult to add functionality to web apps running as standalone applications.
 
 ### Key Benefits for App Mode Users:
-- **Works everywhere**: Unlike typical extensions, webapp-urltools uses declarative content scripts that load at document start, ensuring functionality in app mode
+- **Works everywhere**: Unlike typical extensions, chrome-webapp-urltools uses declarative content scripts that load at document start, ensuring functionality in app mode
 - **No browser chrome needed**: All features work through keyboard shortcuts and inline UI, perfect for distraction-free app windows
 - **Smart clipboard handling**: Rich copy feature adapts to where you're pasting, making it seamless to capture references
 
@@ -89,14 +95,21 @@ This extension was created specifically to address the limitations of Chrome's `
 - **Offscreen Documents**: Used for reliable clipboard operations
 - **Fallback Chains**: Multiple injection methods ensure the extension works across all contexts
 
-### Files
-- `manifest.json` - Extension configuration
-- `background.js` - Service worker handling commands and messaging
-- `content-listener.js` - Content script loaded on all pages
-- `modal.js` - URL editing modal interface
-- `notification.js` - Toast notification system
-- `offscreen.js` / `offscreen.html` - Clipboard handling
-- `popup.js` / `popup.html` - Fallback popup interface
+### Project Structure
+```
+chrome-webapp-urltools/
+├── chrome/                    # Extension source files
+│   ├── manifest.json         # Extension configuration
+│   ├── background.js         # Service worker handling commands and messaging
+│   ├── content-listener.js  # Content script loaded on all pages
+│   ├── modal.js             # URL editing modal interface
+│   ├── notification.js      # Toast notification system
+│   ├── offscreen.js         # Clipboard handling script
+│   └── offscreen.html       # Offscreen document for clipboard
+├── screenshots/              # Extension screenshots
+├── README.md                # This file
+└── LICENSE                  # MIT License
+```
 
 ## Compatibility
 

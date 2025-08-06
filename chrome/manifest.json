@@ -1,13 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "webapp-urltools",
+  "name": "chrome-webapp-urltools",
   "version": "1.0.0",
   "description": "URL editing and copying tools optimized for Chrome web apps (--app mode)",
   "permissions": ["tabs", "search", "clipboardWrite", "offscreen", "scripting", "activeTab"],
   "host_permissions": ["<all_urls>"],
-  "action": {
-    "default_popup": "popup.html"
-  },
   "background": {
     "service_worker": "background.js"
   },
